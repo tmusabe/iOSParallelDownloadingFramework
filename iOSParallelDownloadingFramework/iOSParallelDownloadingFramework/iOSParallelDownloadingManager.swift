@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 typealias DownloadCompletionBlock = (_ data: Data?, _ error: Error?) -> Void
 typealias ParallelDownloadingCompletion = (_ data: [Data]?,_ error: [Error]?) -> Void
@@ -70,7 +69,7 @@ class ParallelDownloadingManger: NSObject, URLSessionDelegate, URLSessionDataDel
             DispatchQueue.main.async(execute: {
                 var progress: Progress!
                 if let progressCount = object {
-                    progress = progressCount as! Progress
+                    progress = progressCount as? Progress
                 }
                 else {
                     progress = Progress(totalUnitCount:0)
