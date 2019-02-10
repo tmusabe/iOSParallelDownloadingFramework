@@ -12,7 +12,7 @@ public typealias DownloadCompletionBlock = (_ data: Data?, _ error: Error?) -> V
 public typealias ParallelDownloadingCompletion = (_ data: [Data]?,_ error: [Error]?) -> Void
 
 public class ParallelDownloadingManger: NSObject, URLSessionDelegate, URLSessionDataDelegate{
-    static let sharedInstance = ParallelDownloadingManger()
+    public static let sharedInstance = ParallelDownloadingManger()
     
     public var progress: Progress?
     
