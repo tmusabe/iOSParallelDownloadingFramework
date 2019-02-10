@@ -8,10 +8,10 @@
 
 import Foundation
 
-typealias DownloadCompletionBlock = (_ data: Data?, _ error: Error?) -> Void
-typealias ParallelDownloadingCompletion = (_ data: [Data]?,_ error: [Error]?) -> Void
+public typealias DownloadCompletionBlock = (_ data: Data?, _ error: Error?) -> Void
+public typealias ParallelDownloadingCompletion = (_ data: [Data]?,_ error: [Error]?) -> Void
 
-class ParallelDownloadingManger: NSObject, URLSessionDelegate, URLSessionDataDelegate{
+public class ParallelDownloadingManger: NSObject, URLSessionDelegate, URLSessionDataDelegate{
     static let sharedInstance = ParallelDownloadingManger()
     
     public var progress: Progress?
@@ -25,13 +25,13 @@ class ParallelDownloadingManger: NSObject, URLSessionDelegate, URLSessionDataDel
     
     private var downloadSession: URLSession!
     private var fractionCompleted: Double! = 0.0
-    override init() {
+    public override init() {
         super.init()
         downloadSession = URLSession(configuration: URLSessionConfiguration.ephemeral, delegate: self, delegateQueue: nil)
         
     }
     
-    func parallelDownloadingForURLs(_ urls:[String], completion: ParallelDownloadingCompletion?){
+    public func parallelDownloadingForURLs(_ urls:[String], completion: ParallelDownloadingCompletion?){
         var datas: [Data] = [Data]()
         var errors: [Error] = [Error]()
         let downloadGroup = DispatchGroup()
@@ -64,7 +64,7 @@ class ParallelDownloadingManger: NSObject, URLSessionDelegate, URLSessionDataDel
         task.resume()
     }
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if context == ParallelDownloadingManger.progressObserverContext {
             DispatchQueue.main.async(execute: {
                 var progress: Progress!

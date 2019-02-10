@@ -16,6 +16,7 @@
 		477DA6B1220B13E700FF25E5 /* iOSParallelDownloadingFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSParallelDownloadingFramework.h; sourceTree = "<group>"; };
 		477DA6B2220B13E700FF25E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		477DA6B9220B144100FF25E5 /* iOSParallelDownloadingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSParallelDownloadingManager.swift; sourceTree = "<group>"; };
+		4797E8ED220BF52C00F52BED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +35,7 @@
 			children = (
 				477DA6B0220B13E700FF25E5 /* iOSParallelDownloadingFramework */,
 				477DA6AF220B13E700FF25E5 /* Products */,
+				4797E8EC220BF52C00F52BED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,6 +55,14 @@
 				477DA6B9220B144100FF25E5 /* iOSParallelDownloadingManager.swift */,
 			);
 			path = iOSParallelDownloadingFramework;
+			sourceTree = "<group>";
+		};
+		4797E8EC220BF52C00F52BED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4797E8ED220BF52C00F52BED /* UIKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +277,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
@@ -295,7 +305,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
